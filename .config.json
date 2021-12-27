@@ -1,0 +1,19 @@
+{
+  "logger": {
+    "directory": "storage/logs",
+    "filename": "logger.log"
+  },
+  "jd": {
+    "cookies": [
+      "pt_pin=jd_29a;pt_key=AAJhyW;"
+    ]
+  },
+  "notify": {
+    "server_j": "",
+    "push_plus": "",
+    "tg": {
+      "bot_token": "",
+      "user_id": ""
+    }
+  }
+}

@@ -13,3 +13,12 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+config/config.json
+config/crontab.json
+
+.idea/
+
+storage/logs/*.log
+
+
+*.bin
