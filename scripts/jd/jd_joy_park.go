@@ -162,6 +162,10 @@ func (j JdJoyPark) browse(task string) {
 
 	times := gjson.Get(taskItemData, `data.status.finishNeed`).Int()
 
+	if times > int64(len(taskItemList)) {
+		times = int64(len(taskItemList))
+	}
+
 	for i := 0; int64(i) < times; i++ {
 
 		item := taskItemList[i].String()
@@ -176,7 +180,7 @@ func (j JdJoyPark) browse(task string) {
 		if code := gjson.Get(resp, `code`).Int(); code == 0 {
 			j.Println(fmt.Sprintf("成功浏览ID:%s", gjson.Get(item, `itemName`)))
 		}
-		time.Sleep(time.Second * 1)
+		time.Sleep(time.Second * 2)
 
 		resp = j.request("apTaskDrawAward", map[string]interface{}{
 			"taskType": gjson.Get(task, `taskType`).String(),
@@ -186,7 +190,7 @@ func (j JdJoyPark) browse(task string) {
 		if code := gjson.Get(resp, `code`).Int(); code == 0 {
 			j.Println(fmt.Sprintf("成功领取浏览:%s的奖励...", gjson.Get(item, `itemName`)))
 		}
-		time.Sleep(time.Second * 1)
+		time.Sleep(time.Second * 2)
 	}
 }
 
