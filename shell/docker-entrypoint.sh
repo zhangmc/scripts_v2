@@ -49,6 +49,8 @@ fi
 echo "正在更新依赖包...";
 go get -u;
 
+cd $CODE_DIR;
+
 echo "正在更新配置文件...";
 go run $CODE_DIR/tools/update_config.go;
 
