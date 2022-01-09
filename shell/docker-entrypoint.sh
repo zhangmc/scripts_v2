@@ -54,6 +54,7 @@ cd $CODE_DIR;
 echo "正在更新配置文件...";
 go run $CODE_DIR/tools/update_config.go;
 
+rm -f $CODE_DIR/*.bin;
 echo "正在编译脚本...";
 go run $CODE_DIR/tools/build_scripts.go;
 chmod +x $CODE_DIR/*.bin;
