@@ -38,12 +38,12 @@ fi
 
 if [ ! -f "$CODE_DIR/config/config.json" ]; then
   echo "初始化脚本配置文件: " + "$CODE_DIR/config/config.json";
-  cp $CODE_DIR/.config.json $CODE_DIR/config/.config.json;
+  cp $CODE_DIR/.config.json $CODE_DIR/config/config.json;
 fi
 
 if [ ! -f "$CODE_DIR/config/crontab.json" ]; then
   echo "初始化用户定时任务配置文件:"  + "$CODE_DIR/config/crontab.json";
-  cp $CODE_DIR/.crontab.json $CODE_DIR/config/.crontab.json;
+  cp $CODE_DIR/.crontab.json $CODE_DIR/config/crontab.json;
 fi
 
 echo "正在更新依赖包...";
