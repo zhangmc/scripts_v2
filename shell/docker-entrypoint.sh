@@ -46,6 +46,10 @@ if [ ! -f "$CODE_DIR/config/crontab.json" ]; then
   cp $CODE_DIR/.crontab.json $CODE_DIR/config/crontab.json;
 fi
 
+if [ ! -f "$CODE_DIR/storage/logs/logger.log" ]; then
+  touch $CODE_DIR/storage/logs/logger.log;
+fi
+
 echo "正在更新依赖包...";
 go get -u;
 
@@ -63,7 +67,7 @@ echo "正在更新定时任务...";
 go run $CODE_DIR/tools/update_crontab.go;
 
 echo "正在更新docker-entrypoint命令...";
-cp "$CODE_DIR""/shell/docker-entrypoint.sh" /bin/docker-entrypoint;
+cp $CODE_DIR/shell/docker-entrypoint.sh /bin/docker-entrypoint;
 chmod +x /bin/docker-entrypoint;
 
 echo "===================更新完成================="
