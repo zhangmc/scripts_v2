@@ -72,4 +72,4 @@ chmod +x /bin/docker-entrypoint;
 
 echo "===================更新完成================="
 
-tail -f /dev/null
+tail -f /dev/null;
