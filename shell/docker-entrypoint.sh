@@ -18,6 +18,10 @@ if [ ! -d $SSH_ROOT ]; then
 fi
 
 
+if [ ! -d $CODE_DIR ]; then
+    mkdir -p $CODE_DIR;
+fi
+
 
 if [ ! -d $CODE_DIR/.git ]; then
   echo "脚本目录为空, 开始初始化...";
@@ -25,7 +29,6 @@ if [ ! -d $CODE_DIR/.git ]; then
     echo "设置Git仓库地址: " + "$CODE_DIR" + "...";
     REPO_URL=https://github.com/ClassmateLin/scripts_v2.git;
   fi
-  mkdir $CODE_DIR;
   cd $CODE_DIR;
   git init;
   git remote add origin $REPO_URL;

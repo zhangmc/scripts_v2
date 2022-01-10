@@ -9,8 +9,7 @@ RUN apt update -y \
     && chsh -s /bin/bash \
     && echo Asia/Shanghai > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && export LC_ALL="C.UTF-8" \
-    && chmod +x /bin/docker-entrypoint \
-    && docker-entrypoint
+    && chmod +x /bin/docker-entrypoint
 
 
 ENTRYPOINT ["/bin/docker-entrypoint"]
